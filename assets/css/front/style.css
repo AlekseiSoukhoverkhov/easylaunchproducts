@@ -1,0 +1,365 @@
+/* =========================
+   EASY LAUNCH PRODUCTS & BRANDS ARCHIVE
+   (Including shortcode list embed)
+   ========================= */
+
+/* Main container for archives */
+/* Selector updated to include the new shortcode class. */
+.wrapper.archive_products,
+.wrapper.archive_brands,
+.wrapper.archive_products.easyproducts-list-embed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+    /* FIX: Center the grid container and set max-width for large screens */
+    max-width: 1200px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+/* Each card (product or brand) */
+.wrapper.archive_products article.products,
+.wrapper.archive_brands article.brands,
+.wrapper.archive_products.easyproducts-list-embed article.products {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.wrapper.archive_products article.products:hover,
+.wrapper.archive_brands article.brands:hover,
+.wrapper.archive_products.easyproducts-list-embed article.products:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Thumbnail container */
+.product-thumb,
+.brands-thumb {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Thumbnail image: full width, height auto, maintain proportions */
+.product-thumb img,
+.brands-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Title */
+.wrapper.archive_products article.products h2,
+.wrapper.archive_brands article.brands h2 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+/* Description */
+.wrapper.archive_products .description,
+.wrapper.archive_brands .description {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+/* Product info / Brand info */
+.wrapper.archive_products .product_info,
+.wrapper.archive_brands .product_info {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Read more link */
+.wrapper.archive_products article.products a.learn-more,
+.wrapper.archive_brands article.brands a.learn-more {
+    color: #0073aa;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+}
+.wrapper.archive_products article.products a.learn-more:hover,
+.wrapper.archive_brands article.brands a.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+
+/* =========================
+   FILTER LAYOUT (FIXED FOR CENTER ALIGNMENT - NO BACKGROUND)
+   ========================= */
+.wrapper.filter_form {
+    /* FIX: Center the filter block and constrain its size */
+    max-width: 960px; /* Set a max width for the entire filter container */
+    margin: 0 auto 30px auto; /* Center horizontally, set bottom margin */
+    padding: 0 20px; /* Removed background color and kept minimal padding */
+    box-sizing: border-box;
+}
+
+/* Inner container (form wrapper) is now just the form */
+.wrapper.filter_form form {
+    /* Form itself is a flex container with centered items */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; /* Center items when they wrap */
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .wrapper.filter_form form {
+        flex-wrap: nowrap;
+        /* When on one line, keep it centered */
+        justify-content: center;
+    }
+}
+
+.wrapper.filter_form form input,
+.wrapper.filter_form form select,
+.wrapper.filter_form form button,
+.wrapper.filter_form form input[type=submit] {
+    flex: 0 0 auto; /* Stop items from stretching and keep their defined size */
+    min-width: 140px;
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------- */
+
+/* Pagination */
+.archive_products .page-numbers,
+.archive_brands .page-numbers {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Responsive layout */
+
+/* Tablet: 2 columns (max-width: 992px) */
+@media (max-width: 992px) {
+    .wrapper.archive_products,
+    .wrapper.archive_brands,
+    .wrapper.archive_products.easyproducts-list-embed {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+    }
+}
+
+/* Mobile: 1 column (max-width: 768px) */
+@media (max-width: 768px) {
+    .wrapper.archive_products,
+    .wrapper.archive_brands,
+    .wrapper.archive_products.easyproducts-list-embed {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+}
+
+/* ---------------------------------------------------- */
+
+/* =========================
+   SINGLE PRODUCT & SINGLE BRAND
+   ========================= */
+
+.wrapper.single_product,
+.wrapper.single_brand {
+    max-width: 900px; /* Maximum content width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Outer spacing */
+    box-sizing: border-box;
+}
+
+.wrapper.single_product .product-thumb,
+.wrapper.single_brand .brands-thumb {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.wrapper.single_product .product-thumb img,
+.wrapper.single_brand .brands-thumb img {
+    width: 100%;
+    height: auto; /* Maintain proportions */
+    display: block;
+    border-radius: 6px;
+}
+
+.wrapper.single_product h1,
+.wrapper.single_brand h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.wrapper.single_product .product-text,
+.wrapper.single_brand .description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wrapper.single_product .products_info,
+.wrapper.single_brand .product_info {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.wrapper.single_product .products_info p,
+.wrapper.single_brand .product_info p {
+    margin: 5px 0;
+}
+
+.wrapper.single_product .back-to-archive,
+.wrapper.single_brand .back-to-archive {
+    margin-top: 20px;
+}
+
+.wrapper.single_product .back-to-archive a,
+.wrapper.single_brand .back-to-archive a {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wrapper.single_product .back-to-archive a:hover,
+.wrapper.single_brand .back-to-archive a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for single pages */
+@media (max-width: 768px) {
+    .wrapper.single_product,
+    .wrapper.single_brand {
+        padding: 15px;
+    }
+
+    .wrapper.single_product h1,
+    .wrapper.single_brand h1 {
+        font-size: 24px;
+    }
+
+    .wrapper.single_product .product-text,
+    .wrapper.single_brand .description {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   EASY PRODUCTS ORDER FORM
+   (Highly specific styles to avoid theme conflicts)
+   ========================= */
+
+/* 1. Wrapper, border, and padding */
+.easypr-order-form-wrapper {
+    /* Border and background */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    padding: 30px; /* Inner padding */
+    background-color: #f9f9f9;
+    max-width: 600px; /* Width limit for better layout */
+    margin: 40px 0 40px 0; /* Top 40px, Right 0, Bottom 40px, Left 0 - aligns to the left */
+}
+
+/* Form Title - specific to avoid touching generic h3 */
+.easypr-order-form-wrapper .easypr-form-title {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    border-bottom: 1px solid #eee; /* Separator line */
+    padding-bottom: 10px;
+}
+
+/* 2. Style for each field container */
+.easypr-order-form-wrapper .easypr-field-row {
+    margin-bottom: 20px;
+}
+
+/* Style for Labels */
+.easypr-order-form-wrapper .easypr-label {
+    display: block; /* Make label full width */
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* 3. Style for all input fields (text, email, tel, number, textarea) */
+.easypr-order-form-wrapper .easypr-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important: padding doesn't increase overall width */
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.easypr-order-form-wrapper .easypr-input:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa; /* Subtle focus glow */
+    outline: none;
+}
+
+/* Style for the submit button container */
+.easypr-order-form-wrapper .easypr-submit-row {
+    margin-top: 30px;
+    text-align: right; /* Align button to the right */
+}
+
+/* Style for the submit button */
+.easypr-order-form-wrapper .easypr-submit-button {
+    background-color: #0073aa;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.easypr-order-form-wrapper .easypr-submit-button:hover {
+    background-color: #005177;
+}
+
+/* Styles for success/error messages — adjusted to align with the form (no left offset) */
+.easypr-message {
+    box-sizing: border-box;    /* include padding in width calculation */
+    width: 100%;               /* fill the parent container width */
+    padding: 15px;
+    margin: 20px 0;            /* vertical spacing only */
+    border-radius: 4px;
+    font-weight: 600;
+    /* ensure it sits flush with container padding */
+    display: block;
+}
+
+.easypr-message-success {
+    background-color: #d4edda; /* Light green */
+    color: #155724;            /* Dark green text */
+    border: 1px solid #c3e6cb;
+}
+
+.easypr-message-error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24;            /* Dark red text */
+    border: 1px solid #f5c6cb;
+}
+
+.easypr-message p {
+    margin: 0;
+    font-weight: 600;
+}
+}

@@ -1,0 +1,24 @@
+/* =========================================
+   EasyProducts Admin Styles
+   ========================================= */
+
+.easyproducts-gallery-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 10px; /* Добавил небольшой отступ сверху для красоты в админке */
+}
+
+.easyproducts-gallery-item {
+    width: calc(33.33% - 4px);
+    position: relative; /* Полезно, если захотите добавить кнопку удаления поверх картинки */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.easyproducts-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
